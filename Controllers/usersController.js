@@ -46,4 +46,21 @@ module.exports = {
 
     },
 
+    editProfile: async (req, res) => {
+
+        try {
+
+            console.log('--------------------')
+            console.log("this is the edit profile page")
+            console.log('--------------------')
+            res.render('Users-ejs-files/editprofile.ejs')            
+            
+        } catch (error) {
+
+            res.send(error)
+            
+        }
+
+    },
+
 }
