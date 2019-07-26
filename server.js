@@ -8,6 +8,8 @@ const app               = express()
 
 require('./DB/db')
 
+const usersRoute   = require('./Routes/usersRoute')
+
 
 
 // -----------------------------------------------------------------------------------------
@@ -19,11 +21,25 @@ app.use(express.urlencoded())
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(methodOverride('_method'))
 app.use(logger('dev'))
-// app.use()
+app.use('/auth', usersRoute)
 
 
 
 // -----------------------------------------------------------------------------------------
+
+// Landing page
+
+// app.get('/', (req, res) => {
+ 
+//     res.render('welcomePage.ejs', {
+//       message: req.session.message
+//     })
+//   })
+
+
+// -----------------------------------------------------------------------------------------
+
+
 
 // Listener
 
