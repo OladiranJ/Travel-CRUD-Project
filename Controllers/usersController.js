@@ -27,6 +27,23 @@ module.exports = {
             
         }
 
-    }
+    },
+
+    profilePage: async (req, res) => {
+
+        try {
+
+            console.log('--------------------')
+            console.log("this is the user's profile page")
+            console.log('--------------------')
+            res.render('Users-ejs-files/profilepage.ejs')
+            
+        } catch (error) {
+
+            res.send(error)
+            
+        }
+
+    },
 
 }
