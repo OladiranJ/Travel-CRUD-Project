@@ -17,6 +17,12 @@ const tripsController = {
         } catch (err){
             res.send(err);
         }
+    },
+    activityListPage: async (req, res) => {
+        try {res.render('Trips-ejs-files/newTripPage.ejs')
+        } catch (err){
+        res.send(err);
+        }
     }
 }
 
