@@ -63,4 +63,21 @@ module.exports = {
 
     },
 
+    create: async (req, res) => {
+
+        try {
+
+            console.log('--------------------')
+            console.log("this is the create user page")
+            console.log('--------------------')
+            res.render('Users-ejs-files/new.ejs')
+            
+        } catch (error) {
+
+            res.send(error)
+            
+        }
+
+    },
+
 }
