@@ -9,7 +9,7 @@ const app               = express()
 require('./DB/db')
 
 const usersRoute   = require('./Routes/usersRoute')
-
+const tripsRoute   = require('./Routes/tripsRoute')
 
 
 // -----------------------------------------------------------------------------------------
@@ -22,6 +22,7 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(methodOverride('_method'))
 app.use(logger('dev'))
 app.use('/auth', usersRoute)
+app.use('/trips', tripsRoute)
 
 
 
