@@ -20,7 +20,9 @@ module.exports = {
             console.log('--------------------')
             console.log("this is the user's homepage")
             console.log('--------------------')
-            res.render('Users-ejs-files/homepage.ejs')
+            res.render('Users-ejs-files/homepage.ejs',{
+                id: req.session.userId
+            })
             
         } catch (error) {
             
@@ -34,11 +36,14 @@ module.exports = {
     profilePage: async (req, res) => {
         
         try {
-            
+
+            const foundUser = await User.findById(req.params.id)
             console.log('--------------------')
             console.log("this is the user's profile page")
             console.log('--------------------')
-            res.render('Users-ejs-files/profilepage.ejs')
+            res.render('Users-ejs-files/profilepage.ejs', {
+                user: foundUser
+            })
             
         } catch (error) {
             
@@ -53,10 +58,13 @@ module.exports = {
         
         try {
             
+            const foundUser = await User.findById(req.params.id)
             console.log('--------------------')
             console.log("this is the edit profile page")
             console.log('--------------------')
-            res.render('Users-ejs-files/editprofile.ejs')            
+            res.render('Users-ejs-files/editprofile.ejs', {
+                user: foundUser
+            })            
             
         } catch (error) {
             
@@ -124,6 +132,30 @@ module.exports = {
 
             const foundUser = await User.findOne({username: req.body.username})
             console.log(foundUser, ' foundUser')
+
+            if (foundUser) {
+
+                if (bcrypt.compareSync(req.body.password, foundUser.password)) {
+
+                    req.session.userId      = foundUser._id
+                    req.session.username    = foundUser.username
+                    req.session.logged      = true
+                    req.session.message     = ''
+                    res.redirect('/auth')
+
+                } else {
+
+                    req.session.message = 'Username or Password Incorrect'
+                    res.redirect('/')
+
+                }
+
+            } else {
+
+                req.session.message = 'Username or Password Incorrect'
+                res.redirect('/')
+
+            }
             
         } catch (error) {
             

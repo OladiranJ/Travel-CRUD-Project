@@ -1,12 +1,12 @@
 <%- include("../partials/header.ejs")%>
 
             <h1>Your Profile</h1>
-
+            <h1>Hi <%=user.username%></h1>
                 <h3>Tell us about yourself!</h3>
 
             
             <span>
-                <button><a href="/auth/profile/edit">Edit Your Profile</a></button>
+                <button><a href="/auth/<%=user._id%>/edit">Edit Your Profile</a></button>
             </span>
 
             <span>
