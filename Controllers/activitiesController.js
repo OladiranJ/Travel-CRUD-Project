@@ -36,6 +36,19 @@ const activitiesController = {
         } catch (err){
             res.send(err);
         }
+    },
+    activityDetails: async (req, res) => {
+        try{
+            Activities.findById(req.params.id, (err, findActivity) => {
+                res.render('Trips-ejs-files/actDetailPage.ejs', {
+                    activity: findActivity
+                })
+            }
+            )
+
+        }catch(err){
+            res.send(err);
+        }
     }
 }
 
