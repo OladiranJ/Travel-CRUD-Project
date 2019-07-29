@@ -20,8 +20,9 @@ module.exports = {
             console.log('--------------------')
             console.log("this is the user's homepage")
             console.log('--------------------')
-            res.render('Users-ejs-files/homepage.ejs',{
-                id: req.session.userId
+            res.render('Users-ejs-files/homepage.ejs', {
+                id:         req.session.userId,
+                username:   req.session.username
             })
             
         } catch (error) {
@@ -165,5 +166,24 @@ module.exports = {
         }
 
     },
+    
+    edit: async (req, res) => {
+
+        try {
+
+            const editUser = await User.findByIdAndUpdate(req.params.id, req.body)
+            console.log('--------------------')
+            console.log(editUser)
+            console.log('--------------------')
+            res.redirect('/auth/' + req.params.id)
+            
+        } catch (error) {
+
+            console.log(error)
+            res.send(error)
+            
+        }
+
+    }
 
 }
