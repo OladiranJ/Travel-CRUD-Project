@@ -8,8 +8,11 @@ router.get('/', tripsController.showTripsIndex);
 router.get('/new-trip', tripsController.newTripPage);
 
 // Activities
-router.get('/activity-list', tripsController.activityListPage)
-router.get('/add-activity', activitiesController.addActivity)
+router.get('/activity-list', tripsController.activityListPage);
+router.get('/add-activity', activitiesController.addActivity);
 router.post('/', activitiesController.activityPost);
+router.get('/activities/:city', activitiesController.cityView);
+router.get('/activity-details/:id', activitiesController.activityDetails);
+router.delete('/activity-details/:id', activitiesController.deleteActivity);
 
 module.exports = router;

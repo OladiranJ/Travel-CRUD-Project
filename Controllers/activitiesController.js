@@ -23,6 +23,43 @@ const activitiesController = {
         } catch(err){
             res.send(err);
         }
+    },
+    cityView: async (req, res) => {
+        try{
+            const cityList = await Activities.find( {city: req.params.city});
+            console.log(cityList)
+            res.render('Trips-ejs-files/cityActPage.ejs',{
+                activities: cityList,
+                city: cityList[0].city
+            });
+
+        } catch (err){
+            res.send(err);
+        }
+    },
+    activityDetails: async (req, res) => {
+        try{
+            Activities.findById(req.params.id, (err, findActivity) => {
+                res.render('Trips-ejs-files/actDetailPage.ejs', {
+                    activity: findActivity
+                })
+            }
+            )
+
+        }catch(err){
+            res.send(err);
+        }
+    },
+    deleteActivity: async (req, res) =>{
+        try {
+            Activities.findByIdAndRemove(req.params.id, () =>{
+                res.redirect('/trips/new-trip');
+            })
+
+        }catch(err){
+            res.send(err);
+
+        }
     }
 }
 
