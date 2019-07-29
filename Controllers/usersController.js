@@ -143,7 +143,7 @@ module.exports = {
                     req.session.username    = foundUser.username
                     req.session.logged      = true
                     req.session.message     = ''
-                    req.sessions.user       = foundUser
+                    req.session.user       = foundUser
                     res.redirect('/auth')
 
                 } else {
