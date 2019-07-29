@@ -36,12 +36,12 @@ app.use('/trips', tripsRoute)
 
 // Landing page
 
-// app.get('/', (req, res) => {
+app.get('/', (req, res) => {
  
-//     res.render('welcomePage.ejs', {
-//       message: req.session.message
-//     })
-//   })
+    res.render('welcomePage.ejs', {
+      message: req.session.message
+    })
+  })
 
 
 // -----------------------------------------------------------------------------------------

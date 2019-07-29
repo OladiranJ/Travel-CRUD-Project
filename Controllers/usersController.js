@@ -86,9 +86,9 @@ module.exports = {
     },
     
     createUser: async (req, res) => {
-        
-        
+              
         try {
+
             const password = req.body.password
             const hashedPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(10))
             console.log('--------------------')
@@ -116,6 +116,22 @@ module.exports = {
 
     },
 
-    
+    userLogin: async (req, res) => {
+
+        req.session.tried = false
+
+        try {
+
+            const foundUser = await User.findOne({username: req.body.username})
+            console.log(foundUser, ' foundUser')
+            
+        } catch (error) {
+            
+            console.log(error)
+            res.send(error)
+
+        }
+
+    },
 
 }
