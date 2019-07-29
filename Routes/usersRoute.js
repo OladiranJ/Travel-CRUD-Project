@@ -17,6 +17,7 @@ router.get('/new', usersController.newUserPage)
 router.get('/:id', usersController.profilePage)
 router.get('/:id/edit', usersController.editProfile)
 router.put('/:id', usersController.edit)
+router.delete('/:id', usersController.deleteUser)
 router.post('/register', usersController.createUser)
 router.post('/login', usersController.userLogin)
 

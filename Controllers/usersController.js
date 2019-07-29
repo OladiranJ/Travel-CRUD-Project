@@ -200,6 +200,28 @@ module.exports = {
             
         }
 
+    },
+
+    deleteUser: async (req, res) => {
+
+        try {
+
+            const deletedUser = await User.findOneAndDelete({_id: req.params.id})
+            console.log('--------------------')
+            console.log(deletedUser, '<--- this user was deleted')
+            console.log('--------------------')
+            // *After models are finished be sure to include trips in this delete control just like blog*
+            req.session.destroy(() => {
+                res.redirect('/')
+            })
+            
+        } catch (error) {
+
+            console.log(error)
+            res.send(error)
+            
+        }
+
     }
 
 }
