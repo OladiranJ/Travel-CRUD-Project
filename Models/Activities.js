@@ -1,13 +1,14 @@
 const mongoose = require('mongoose');
-const tripsSchema = new mongoose.Schema({
+
+const activitiesSchema = new mongoose.Schema({
+    activityName: String,
     city: {type: String, required: true},
     country: String,
-    activity: String,
     description: String,
     date: { type: Date, default: Date.now },
 
 })
 
-const Trips = mongoose.model('Trips', tripsSchema);
+const Activities = mongoose.model('Activities', activitiesSchema);
 
-module.exports = Trips;
+module.exports = Activities;
