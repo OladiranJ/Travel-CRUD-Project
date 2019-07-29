@@ -49,6 +49,17 @@ const activitiesController = {
         }catch(err){
             res.send(err);
         }
+    },
+    deleteActivity: async (req, res) =>{
+        try {
+            Activities.findByIdAndRemove(req.params.id, () =>{
+                res.redirect('/trips/new-trip');
+            })
+
+        }catch(err){
+            res.send(err);
+
+        }
     }
 }
 
