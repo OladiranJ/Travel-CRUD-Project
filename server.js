@@ -3,6 +3,7 @@
 const express           = require ('express')
 const bodyParser        = require('body-parser')
 const methodOverride    = require('method-override')
+const session           = require('express-session')
 const logger            = require('morgan')
 const app               = express()
 
@@ -16,6 +17,11 @@ const tripsRoute   = require('./Routes/tripsRoute')
 
 // Middleware
 
+app.use(session({
+    secret: 'THIS IS A RANDOM SECRET STRING',
+    resave: false,
+    saveUninitialized: false
+  }))
 app.use(express.json())
 app.use(express.urlencoded())
 app.use(bodyParser.urlencoded({extended: false}))

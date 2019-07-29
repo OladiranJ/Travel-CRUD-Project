@@ -12,9 +12,10 @@ const usersController   = require('../Controllers/usersController')
 // Routes
 
 router.get('/', usersController.homepage)
-router.get('/new', usersController.create)
-router.get('/profile', usersController.profilePage)
-router.get('/profile/edit', usersController.editProfile)
+router.get('/new', usersController.newUserPage)
+router.get('/:id', usersController.profilePage)
+router.get('/:id/edit', usersController.editProfile)
+router.post('/register', usersController.createUser)
 
 
 
