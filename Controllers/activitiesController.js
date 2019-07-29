@@ -18,10 +18,7 @@ const activitiesController = {
     activityPost: async (req, res) => {
         try{
             const createdActivity = await Activities.create(req.body);
-            console.log('=========createdActivity=============');
-            console.log(createdActivity);
-            console.log('=========createdActivity=============');
-            res.redirect('/trips');
+            res.redirect('/trips/add-activity');
 
         } catch(err){
             res.send(err);
