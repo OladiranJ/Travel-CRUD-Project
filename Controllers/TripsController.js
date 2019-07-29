@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Trips = require('../models/trips.js');
+const Trips = require('../Models/Trips');
 
 const tripsController = {
     showTripsIndex: async (req, res) => {

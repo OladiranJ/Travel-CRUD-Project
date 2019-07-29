@@ -1,6 +1,7 @@
 // Requirements
 
 const User          = require('../Models/Users')
+const Trip          = require('../Models/Trips')
 const mongoose      = require('mongoose')
 const bcrypt        = require('bcryptjs')
 
@@ -113,7 +114,7 @@ module.exports = {
             req.session.userId = createdUser._id
             req.session.username = createdUser.username
             req.session.logged = true
-            
+            req.session.user = createdUser
             res.redirect('/auth') // redirect to homepage for now. eventually change to main login.
 
         } catch (error) {
@@ -142,6 +143,7 @@ module.exports = {
                     req.session.username    = foundUser.username
                     req.session.logged      = true
                     req.session.message     = ''
+                    req.sessions.user       = foundUser
                     res.redirect('/auth')
 
                 } else {
@@ -207,6 +209,7 @@ module.exports = {
         try {
 
             const deletedUser = await User.findOneAndDelete({_id: req.params.id})
+            const deleteTrips = await Trip.deleteMany({createdBy:req.params.id})
             console.log('--------------------')
             console.log(deletedUser, '<--- this user was deleted')
             console.log('--------------------')
