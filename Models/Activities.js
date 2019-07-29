@@ -3,9 +3,9 @@ const mongoose = require('mongoose');
 const activitiesSchema = new mongoose.Schema({
     activityName: String,
     city: {type: String, required: true},
-    country: String,
+    country: {type: String, required: true},
     description: String,
-    date: { type: Date, default: Date.now },
+    // date: { type: Date, default: Date.now },
 
 })
 

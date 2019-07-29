@@ -10,6 +10,6 @@ router.get('/new-trip', tripsController.newTripPage);
 // Activities
 router.get('/activity-list', tripsController.activityListPage)
 router.get('/add-activity', activitiesController.addActivity)
-// router.post('/', activitiesController.activityPost);
+router.post('/', activitiesController.activityPost);
 
 module.exports = router;
