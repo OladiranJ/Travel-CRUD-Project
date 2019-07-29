@@ -6,7 +6,11 @@ const Activities = require('../models/activities');
 const activitiesController = {
     addActivity: async (req, res) => {
         try {
-            res.render('Trips-ejs-files/createActivity.ejs')
+            const activitiesIndex = await Activities.find({});
+            
+            res.render('Trips-ejs-files/createActivity.ejs', {
+                activities: activitiesIndex
+            });
         }catch(err){
             res.send(err);
         }
