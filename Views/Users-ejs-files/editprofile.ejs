@@ -4,7 +4,7 @@
 
             <form action="/auth/<%=user._id%>?_method=PUT" method="POST">
                 <h3>Tell Us About Yourself!</h3>
-                    <label>Bio:</label>
+                    <label>Bio:</label><br/>
                         <textarea type="text" name="bio" value="<%=user.bio%>"></textarea><br/>
                     <label>Change Email:</label>
                         <input type="text" name="email" value="<%=user.email%>"/><br/>

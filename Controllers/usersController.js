@@ -184,6 +184,22 @@ module.exports = {
             
         }
 
+    },
+
+    userLogout: async (req, res) => {
+
+        try {
+
+            req.session.destroy(() => {
+                res.redirect('/')
+            })
+            
+        } catch (error) {
+
+            res.send(error)
+            
+        }
+
     }
 
 }

@@ -12,6 +12,7 @@ const usersController   = require('../Controllers/usersController')
 // Routes
 
 router.get('/', usersController.homepage)
+router.get('/logout', usersController.userLogout)
 router.get('/new', usersController.newUserPage)
 router.get('/:id', usersController.profilePage)
 router.get('/:id/edit', usersController.editProfile)
