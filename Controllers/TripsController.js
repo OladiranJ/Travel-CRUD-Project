@@ -19,11 +19,13 @@ const tripsController = {
         }
     },
     activityListPage: async (req, res) => {
-        try {res.render('Trips-ejs-files/newTripPage.ejs')
+        try {
+            res.render('Trips-ejs-files/newTripPage.ejs')
         } catch (err){
         res.send(err);
         }
     }
+
 }
 
 module.exports = tripsController;

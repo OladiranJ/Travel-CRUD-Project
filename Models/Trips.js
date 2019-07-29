@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 const tripsSchema = new mongoose.Schema({
     city: {type: String, required: true},
+    country: String,
+    activity: String,
+    description: String,
     date: { type: Date, default: Date.now },
 
 })
