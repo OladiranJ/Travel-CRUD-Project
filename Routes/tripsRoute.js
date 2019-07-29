@@ -11,5 +11,6 @@ router.get('/new-trip', tripsController.newTripPage);
 router.get('/activity-list', tripsController.activityListPage)
 router.get('/add-activity', activitiesController.addActivity)
 router.post('/', activitiesController.activityPost);
+router.get('/activities/:city', activitiesController.cityView);
 
 module.exports = router;

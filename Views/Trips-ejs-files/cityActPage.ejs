@@ -1,0 +1,13 @@
+<%- include("../partials/header.ejs")%>
+<% %>
+    <h3>Available Activities in <%=city%>:</h3>
+
+    <ul>
+        <% for (let i = 0; i < activities.length; i++) {%>
+        <li><%= activities[i].activityName %> </li>
+        <% } %>
+    <ul>
+
+      
+
+<%- include("../partials/footer.ejs")%>

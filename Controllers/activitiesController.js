@@ -23,6 +23,19 @@ const activitiesController = {
         } catch(err){
             res.send(err);
         }
+    },
+    cityView: async (req, res) => {
+        try{
+            const cityList = await Activities.find( {city: req.params.city});
+            console.log(cityList)
+            res.render('Trips-ejs-files/cityActPage.ejs',{
+                activities: cityList,
+                city: cityList[0].city
+            });
+
+        } catch (err){
+            res.send(err);
+        }
     }
 }
 
