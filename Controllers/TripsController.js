@@ -4,14 +4,15 @@ const Activities = require('../models/activities');
 
 
 const tripsController = {
-    showTripsIndex: async (req, res) => {
-        try {
-            res.render('Trips-ejs-files/index.ejs');
+    // Delete this 
+    // showTripsIndex: async (req, res) => {
+    //     try {
+    //         res.render('Trips-ejs-files/index.ejs');
 
-        } catch(err){
-            res.send(err);
-        }
-    },
+    //     } catch(err){
+    //         res.send(err);
+    //     }
+    // },
     newTripPage: async (req, res) => {
         try {
             res.render('Trips-ejs-files/newTripPage.ejs')

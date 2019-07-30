@@ -4,7 +4,7 @@ const tripsController = require('../controllers/TripsController');
 const activitiesController =require('../controllers/activitiesController');
 
 // Trips
-router.get('/', tripsController.showTripsIndex);
+// router.get('/', tripsController.showTripsIndex);
 router.get('/new-trip', tripsController.newTripPage);
 router.post('/create-trip', tripsController.createTrip);
 router.post('/new', tripsController.startTripPost);
