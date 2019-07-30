@@ -31,7 +31,7 @@ const tripsController = {
     },
     userNewTripPage: async (req,res)=>{
             const allActivities = await Activities.find({city: req.params.city});
-            // console.log(allActivities);
+            console.log(allActivities);
             res.render('Trips-ejs-files/userTrip.ejs', {
                 activities: allActivities,
                 city: allActivities[0].city
@@ -42,39 +42,53 @@ const tripsController = {
     createTrip: async (req, res) => {
         if(req.session.logged){
             try {
-            // console.log(req.body.activity)
-            const activities = []
-            // check if its an array
-            // if it is then you have to find all the activities *problem is async
-            if(Array.isArray(req.body.activity)) {
-                await Promise.all(req.body.activity.map(async (file) => {
-                    activities.push(await Activities.findById(file))
-                  }))
-            }
-            
-            const createdTrip = await Trip.create({
-                city: 'burbank',
-                country: 'usa',
-                description: 'this is a new trip',
-                createdBy: req.session.user
-            })
+                console.log(req.body.activity, "<====this is the req.body.activity")
+                const activities = []
+                // check if its an array
+                // if it is then you have to find all the activities *problem is async
+                if(Array.isArray(req.body.activity)) {
+                    await Promise.all(req.body.activity.map(async (file) => {
+                        activities.push(await Activities.findById(file))
+                    }))
+                } else {
+                    activities.push(await Activities.findById(req.body.activity))
+                }
+                console.log(activities)
+                req.body.city = activities[0].city
+                req.body.country = activities[0].country
+                req.body.createdBy = req.session.user
+                req.body.activity = activities
+                
+                // const createdTrip = await Trip.create({
+                //     city: 'burbank',
+                //     country: 'usa',
+                //     description: 'this is a new trip',
+                //     createdBy: req.session.user
+                // })
 
 
-            if(activities.length === 0) {
-                const findActivities = await Activities.findById(req.body.activity)
-                createdTrip.activity.push(findActivities)
-            } else {
-                createdTrip.activity.push(...activities)
-            }
-            
-            await createdTrip.save()
-            console.log(createdTrip)
-            
-            // console.log("================StartfindActivities=1================")
-            // console.log(findActivities)
-            // console.log("================ENDfindActivities=1=================")
+                // if(activities.length === 0) {
+                //     const findActivities = await Activities.findById(req.body.activity)
+                //     createdTrip.activity.push(findActivities)
+                // } else {
+                //     createdTrip.activity.push(...activities)
+                // }
+                
+                // await createdTrip.save()
+                // console.log(createdTrip)
+                // res.render('/Users-ejs-files/homepage.ejs', {
+                //     trips: createdTrip
+                // })
+
+                const newTrip = await Trip.create(req.body)
+                console.log(newTrip)
+                res.redirect('/auth')
+                
+                // console.log("================StartfindActivities=1================")
+                // console.log(findActivities)
+                // console.log("================ENDfindActivities=1=================")
             } catch(err) {
-            console.log(err)
+                console.log(err)
             }
         
             // find the activity. req.body

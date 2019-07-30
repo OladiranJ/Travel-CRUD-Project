@@ -3,6 +3,7 @@
 const express           = require('express')
 const router            = express.Router()
 const usersController   = require('../Controllers/usersController')
+const tripsController   = require('../Controllers/TripsController')
 
 
 
@@ -20,6 +21,9 @@ router.put('/:id', usersController.edit)
 router.delete('/:id', usersController.deleteUser)
 router.post('/register', usersController.createUser)
 router.post('/login', usersController.userLogin)
+
+
+router.post('/create-trip', tripsController.createTrip)
 
 
 

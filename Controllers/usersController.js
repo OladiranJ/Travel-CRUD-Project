@@ -17,13 +17,16 @@ module.exports = {
     homepage: async (req, res) => {
 
         try {
-
+            const foundUser = await User.findById(req.session.userId)
+            const allTrips = await Trip.find({createdBy: req.session.userId}).populate("activity")
             console.log('--------------------')
             console.log("this is the user's homepage")
             console.log('--------------------')
             res.render('Users-ejs-files/homepage.ejs', {
                 id:         req.session.userId,
-                username:   req.session.username
+                username:   req.session.username,
+                user: foundUser,
+                trips: allTrips
             })
             
         } catch (error) {
