@@ -15,6 +15,9 @@
             <% for (let i = 0; i < activities.length; i++) {%>
                 <li>
                     <%= activities[i].activityName %> in <%= activities[i].city %>, <%= activities[i].country %>
+                    <form action="/trips/activity-details/<%=activities[i]._id%>?_method=DELETE" method="post">
+                        <input type="submit" value="Delete <%= activities[i].activityName %>" />
+                    </form>
                         
 
                     <br>

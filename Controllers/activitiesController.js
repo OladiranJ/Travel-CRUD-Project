@@ -53,7 +53,7 @@ const activitiesController = {
     deleteActivity: async (req, res) =>{
         try {
             Activities.findByIdAndRemove(req.params.id, () =>{
-                res.redirect('/trips/new-trip');
+                res.redirect('/trips/add-activity');
             })
 
         }catch(err){

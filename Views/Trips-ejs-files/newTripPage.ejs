@@ -3,12 +3,30 @@
     <h1>Plan Your Next Trip</h1>
 
         <h3> Where would you like to go?</h3>
+        
+            Choose city:
+            <form action="/trips/new" method="POST">
+            <select name="location">
+                <option value="Paris">Paris</option>
+                <option value="London">London</option>
+                <option value="Los Angeles">Los Angeles</option>
+            </select>
+                <br>
+            <%# <input type="submit" value="Start Planning" /><br> %>
+            <input type="submit" value="Start Planning" /><br>
+            </form>
+
+        <%# <h3>View Activities by City:</h3>
+
+
+
+
             <ul>
                 <li><a href="/trips/activities/Paris">Paris</a></li>
                 <li><a href="/trips/activities/London">London</a></li>
                 <li><a href="/trips/activities/Los Angeles">Los Angeles</a></li>
             <ul>
-        
+         %>
     <br>
     <br>
         <a href="/trips/add-activity">Add an activity</a>

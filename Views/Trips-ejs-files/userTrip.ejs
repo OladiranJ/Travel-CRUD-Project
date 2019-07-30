@@ -1,0 +1,14 @@
+<%- include("../partials/header.ejs")%>
+<% %>
+    <h3>Available Activities in <%=city%>:</h3>
+
+    <ul>
+        <% for (let i = 0; i < activities.length; i++) {%>
+        <li><a href="/trips/activity-details/<%=activities[i]._id%>"><%= activities[i].activityName %></a> 
+            </li>
+        <% } %>
+    <ul>
+
+      
+
+<%- include("../partials/footer.ejs")%>
