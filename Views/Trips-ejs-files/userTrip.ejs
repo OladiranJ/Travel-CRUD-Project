@@ -1,0 +1,17 @@
+<%- include("../partials/header.ejs")%>
+<% %>
+    <h3>Available Activities in <%=city%>:</h3>
+
+    <ul>
+        <% for (let i = 0; i < activities.length; i++) {%>
+        <li><a href="/trips/activity-details/<%=activities[i]._id%>"><%= activities[i].activityName %></a> 
+        <form action="/trips/activity-details/<%=activities[i]._id%>?_method=DELETE" method="post">
+            <input type="submit" value="Delete <%= activities[i].activityName %>" />
+            </form>
+            </li>
+        <% } %>
+    <ul>
+
+      
+
+<%- include("../partials/footer.ejs")%>

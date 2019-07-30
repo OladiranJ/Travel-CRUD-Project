@@ -6,6 +6,8 @@ const activitiesController =require('../controllers/activitiesController');
 // Trips
 router.get('/', tripsController.showTripsIndex);
 router.get('/new-trip', tripsController.newTripPage);
+router.post('/new', tripsController.startTripPost);
+router.get('/plan/:city', tripsController.userNewTripPage);
 
 // Activities
 router.get('/activity-list', tripsController.activityListPage);
