@@ -4,8 +4,7 @@ const activitiesSchema = new mongoose.Schema({
     activityName: String,
     city: {type: String, required: true},
     country: {type: String, required: true},
-    description: String,
-    // date: { type: Date, default: Date.now },
+    description: String
 
 })
 

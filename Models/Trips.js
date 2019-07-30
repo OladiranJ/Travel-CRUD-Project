@@ -1,13 +1,17 @@
 const mongoose = require('mongoose');
 
 
+
 const tripsSchema = new mongoose.Schema({
     city: {type: String, required: true},
     country: String,
-    activity: [String],
+    activity: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'Activities'
+    }],
     description: String,
     date: { type: Date, default: Date.now },
-    createdBy:{
+    createdBy: {
         type: mongoose.Schema.Types.ObjectId,
         ref:'User'
     }

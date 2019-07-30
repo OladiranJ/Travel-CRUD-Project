@@ -2,13 +2,19 @@
 <% %>
     <h3>Available Activities in <%=city%>:</h3>
 
-    <ul>
-        <% for (let i = 0; i < activities.length; i++) {%>
-        <li><a href="/trips/activity-details/<%=activities[i]._id%>"><%= activities[i].activityName %></a> 
-            </li>
-        <% } %>
-    <ul>
+    <form action="/trips/create-trip" method="POST">
+        <ul>
+            <% for (let i = 0; i < activities.length; i++) {%>
+                <li>
+                    <input type="checkbox" name="activity" value='<%= activities[i]._id %>'>
 
+                    <%= activities[i].activityName %> :
+                    <%= activities[i].description %>
+                </li>
+            <% } %>
+        <ul>
+        <input type="submit" value="Create Your Trip">
+    </form>
       
 
 <%- include("../partials/footer.ejs")%>
