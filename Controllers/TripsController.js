@@ -4,15 +4,7 @@ const Activities = require('../models/activities');
 
 
 const tripsController = {
-    // Delete this 
-    // showTripsIndex: async (req, res) => {
-    //     try {
-    //         res.render('Trips-ejs-files/index.ejs');
-
-    //     } catch(err){
-    //         res.send(err);
-    //     }
-    // },
+   
     newTripPage: async (req, res) => {
         try {
             res.render('Trips-ejs-files/newTripPage.ejs')
@@ -102,6 +94,27 @@ const tripsController = {
         } else {
             res.redirect('/')
         }
+    },
+    deleteTrip: async (req, res) => {
+
+        try {
+
+            const deletedTrip = await Trip.findByIdAndDelete({_id: req.params.id})
+            const deletedActivities = await Activities.deleteMany({activity: req.params.id})
+            console.log('--------------------')
+            console.log(deletedTrip, '<--- this trip was deleted')
+            console.log('--------------------')
+            console.log(deletedActivities, '<--- these activities in the trip were deleted')
+            console.log('--------------------')
+            res.redirect('/auth')
+            
+        } catch (error) {
+
+            console.log(error)
+            res.send(error)
+            
+        }
+
     }
 }
 

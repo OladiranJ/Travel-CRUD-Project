@@ -8,7 +8,7 @@
 
                 <ul>
                     <%for (let i = 0 ; i < trips.length; i++){%>
-                        <li><%=trips[i].city%></li>
+                        <li><a href="/auth/<%=trips[i]._id%>/yourtrips"><%=trips[i].city%></a></li>
                     <%}%>
                 </ul>
 

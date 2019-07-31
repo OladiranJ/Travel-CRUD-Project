@@ -17,16 +17,17 @@ module.exports = {
     homepage: async (req, res) => {
 
         try {
-            const foundUser = await User.findById(req.session.userId)
-            const allTrips = await Trip.find({createdBy: req.session.userId}).populate("activity")
+
+            const foundUser     = await User.findById(req.session.userId)
+            const allTrips      = await Trip.find({createdBy: req.session.userId}).populate("activity")
             console.log('--------------------')
             console.log("this is the user's homepage")
             console.log('--------------------')
             res.render('Users-ejs-files/homepage.ejs', {
                 id:         req.session.userId,
                 username:   req.session.username,
-                user: foundUser,
-                trips: allTrips
+                user:       foundUser,
+                trips:      allTrips
             })
             
         } catch (error) {
@@ -42,7 +43,7 @@ module.exports = {
         
         try {
 
-            const foundUser = await User.findById(req.params.id)
+            const foundUser     = await User.findById(req.params.id)
             console.log('--------------------')
             console.log("this is the user's profile page")
             console.log('--------------------')
@@ -63,7 +64,7 @@ module.exports = {
         
         try {
             
-            const foundUser = await User.findById(req.params.id)
+            const foundUser     = await User.findById(req.params.id)
             console.log('--------------------')
             console.log("this is the edit profile page")
             console.log('--------------------')
@@ -146,7 +147,7 @@ module.exports = {
                     req.session.username    = foundUser.username
                     req.session.logged      = true
                     req.session.message     = ''
-                    req.session.user       = foundUser
+                    req.session.user        = foundUser
                     res.redirect('/auth')
 
                 } else {
@@ -219,6 +220,33 @@ module.exports = {
             // *After models are finished be sure to include trips in this delete control just like blog*
             req.session.destroy(() => {
                 res.redirect('/')
+            })
+            
+        } catch (error) {
+
+            console.log(error)
+            res.send(error)
+            
+        }
+
+    }, 
+
+    yourTripsPage: async (req, res) => {
+
+        try {
+
+            const foundUser = await User.findById(req.session.userId)
+            const selectedTrip = await Trip.findById(req.params.id).populate('activity')
+            // console.log('--------------------')
+            // console.log("this is the user's trip page")
+            // console.log('--------------------')
+            // console.log(allTrips, "<--- this is all the trips")
+            // console.log('--------------------')
+            res.render('Users-ejs-files/yourtrips.ejs', {
+                id:     req.session.userId,
+                user:   foundUser,
+                trip: selectedTrip,
+                city:   selectedTrip.city
             })
             
         } catch (error) {

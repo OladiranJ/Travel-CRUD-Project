@@ -9,6 +9,7 @@ router.get('/new-trip', tripsController.newTripPage);
 router.post('/create-trip', tripsController.createTrip);
 router.post('/new', tripsController.startTripPost);
 router.get('/plan/:city', tripsController.userNewTripPage);
+router.delete('/:id', tripsController.deleteTrip)
 
 // Activities
 router.get('/activity-list', tripsController.activityListPage);
