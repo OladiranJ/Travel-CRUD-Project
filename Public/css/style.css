@@ -4,7 +4,15 @@
     background-color: #5085A5;
     /* background-color: #8FC1E3; */
 }
-
+.header-img{
+    width: 100%
+}
+.parallax-container{
+    height: 250px !important
+}
+.plane {
+    max-height: 100%;
+}
 body {
     background-color: #F7F9FB;
 }
