@@ -28,6 +28,8 @@ app.use(express.urlencoded())
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(methodOverride('_method'))
 app.use(logger('dev'))
+app.use(express.static('public'))
+
 app.use('/auth', usersRoute)
 app.use('/trips', tripsRoute)
 
