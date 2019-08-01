@@ -2,10 +2,15 @@
 
     <h1>Plan Your Next Trip</h1>
 
+            <div class="parallax-container">
+                    <div class="parallax"><img src="/images/road.jpg" class="header-img"></div>
+            </div>
+
         <h3> Where would you like to go?</h3>
         
             Choose city:
             <form action="/trips/new" method="POST">
+            <div class="input-field col s12">
             <select name="location">
                 <option value="Paris">Paris</option>
                 <option value="London">London</option>
@@ -13,6 +18,7 @@
                 <option value="Tokyo">Tokyo</option>
                 <option value="Amsterdam">Amsterdam</option>
             </select>
+            </div>
                 <br>
             <%# <input type="submit" value="Start Planning" /><br> %>
             <input type="submit" value="Start Planning" /><br>
