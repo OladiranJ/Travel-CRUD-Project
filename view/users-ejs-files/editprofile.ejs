@@ -1,0 +1,28 @@
+<%- include("../partials/header.ejs")%>
+
+    <div class="container col s2">
+            <h1>Edit your profile!</h1>
+            <form action="/auth/<%=user._id%>?_method=PUT" method="POST">
+                <h3>Tell Us About Yourself!</h3>
+                    <label>Bio:</label><br/>
+                        <textarea type="text" name="bio" value="<%=user.bio%>"></textarea><br/>
+                    <label>Change Email:</label>
+                        <input type="text" name="email" value="<%=user.email%>"/><br/>
+                    <label>Profile Picture:</label>
+                        <input type="text" name="profilePic" value="<%=user.profilePic%>"/><br/>
+                        <input type="submit" value="Update Profile"/>
+            </form>
+
+            <div>
+                <button><a href="/auth/<%=user._id%>">Back to Profile</a></button>
+            </div>
+
+            <section>
+          <form action="/auth/<%=user._id%>?_method=DELETE" method="POST">
+              <input type="submit" value="Delete Account"/>
+          </form>
+      </section>
+            
+    </div>
+
+<%- include("../partials/footer.ejs")%>

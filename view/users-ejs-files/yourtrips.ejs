@@ -1,0 +1,20 @@
+<%- include("../partials/header.ejs")%>
+    <div class="container col s2">
+    <h1><%=city%> Trip</h1>
+    <ul>
+        <% for (let i = 0; i < trip.activity.length; i++) {%>
+            <li><%= trip.activity[i].activityName%> : <%= trip.activity[i].description%></li>
+        <%}%>
+    </ul>
+
+
+    <div>
+        <button><a href="/auth/">Back to Homepage</a></button>
+    </div>
+
+
+    <form action="/trips/<%=trip._id%>?_method=DELETE" method="POST">
+              <input type="submit" value="Delete Trip"/>
+          </form>
+</div>
+<%- include("../partials/footer.ejs")%>
