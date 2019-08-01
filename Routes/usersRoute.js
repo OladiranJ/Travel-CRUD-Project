@@ -2,8 +2,8 @@
 
 const express           = require('express')
 const router            = express.Router()
-const usersController   = require('../Controllers/usersController')
-const tripsController   = require('../Controllers/TripsController')
+const usersController   = require('../controllers/usersController')
+const tripsController   = require('../controllers/tripsController')
 
 
 

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 // const Trips = require('../models/trips.js');
-const Activities = require('../Models/Activities');
+const Activities = require('../models/activities');
 
 const activitiesController = {
     addActivity: async (req, res) => {

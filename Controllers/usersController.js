@@ -1,7 +1,7 @@
 // Requirements
 
-const User          = require('../Models/Users')
-const Trip          = require('../Models/Trips')
+const User          = require('../models/users')
+const Trip          = require('../models/trips')
 const mongoose      = require('mongoose')
 const bcrypt        = require('bcryptjs')
 
