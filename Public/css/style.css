@@ -34,3 +34,19 @@ body {
 .brand-logo{
     max-height: 100%
 }
+.login-navbar{
+    height: 100px !important;
+    line-height: 100px !important;
+    margin-bottom: 20px 
+}
+.intro-header{
+    margin-top: 100px
+}
+
+.login-form{
+    font-size: 20px
+}
+.list-items{
+    font-size: 40px;
+    color: black
+}
