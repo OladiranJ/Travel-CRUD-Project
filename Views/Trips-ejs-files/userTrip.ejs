@@ -8,10 +8,13 @@
         <ul>
             <% for (let i = 0; i < activities.length; i++) {%>
                 <li>
+                    <label class="list-items">
                     <input type="checkbox" name="activity" value='<%= activities[i]._id %>'>
-
-                    <%= activities[i].activityName %> :
-                    <%= activities[i].description %>
+                        <span>
+                        <%= activities[i].activityName %> :
+                        <%= activities[i].description %> 
+                        </span>  
+                    </label>
                 </li>
             <% } %>
         <ul>
