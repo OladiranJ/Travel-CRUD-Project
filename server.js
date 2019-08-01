@@ -9,7 +9,7 @@ const app               = express()
 
 require('dotenv').config()
 const PORT              = process.env.PORT
-require('./DB/db')
+require('./db/db')
 
 const usersRoute   = require('./routes/usersRoute')
 const tripsRoute   = require('./routes/tripsRoute')
