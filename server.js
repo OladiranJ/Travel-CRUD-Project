@@ -43,7 +43,7 @@ app.use('/trips', tripsRoute)
 
 app.get('/', (req, res) => {
  
-    res.render('welcomePage.ejs', {
+    res.render('Views/welcomePage.ejs', {
       message: req.session.message
     })
   });
