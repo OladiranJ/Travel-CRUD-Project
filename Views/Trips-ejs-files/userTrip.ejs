@@ -1,5 +1,7 @@
 <%- include("../partials/header.ejs")%>
 <% %>
+<div class="container col s2">
+
     <h3>Available Activities in <%=city%>:</h3>
 
     <form action="/trips/create-trip" method="POST">
@@ -16,5 +18,5 @@
         <input type="submit" value="Create Your Trip">
     </form>
       
-
+</div>
 <%- include("../partials/footer.ejs")%>

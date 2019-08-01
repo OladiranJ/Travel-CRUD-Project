@@ -23,16 +23,17 @@
        
 
 
+            <div class="container">
 
                 <h3 class="intro-header">What is your dream vacation?</h3>
 
                 <h4>Login</h4>
 
-                    <form action="/auth/login" method="POST">
-                        <label>Username:</label>
-                            <input type="text" name="username">
-                        <label>Password:</label>
-                            <input type="password" name='password'>
+                    <form action="/auth/login" method="POST" class="col s6">
+                        <label class="login-form">Username:</label>
+                            <input placeholder="Your Name" type="text" name="username">
+                        <label class="login-form">Password:</label>
+                            <input placeholder="Your Password" type="password" name='password'>
                             <button type='submit'>Login</button>
                             <span class="error"><%=message%></span>
                     </form>
@@ -41,5 +42,6 @@
                 <h4>Don't have an account? Sign up here:</h4>
                     <button type="button"><a href="/auth/new">Sign up</button>
 
+            </div>
 
 <%- include("./partials/footer.ejs")%>
