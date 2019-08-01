@@ -42,7 +42,7 @@ app.use('/trips', tripsRoute)
 // Landing page
 
 app.get('/', (req, res) => {
-    res.render('/welcomePage.ejs', {
+    res.render('welcomePage.ejs', {
       message: req.session.message
     })
   });
