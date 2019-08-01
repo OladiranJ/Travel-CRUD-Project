@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const tripsController = require('../controllers/TripsController');
-const activitiesController =require('../controllers/activitiesController');
+const tripsController = require('../Controllers/TripsController');
+const activitiesController =require('../Controllers/activitiesController');
 
 // Trips
 // router.get('/', tripsController.showTripsIndex);
