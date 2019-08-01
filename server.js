@@ -46,7 +46,7 @@ app.get('/', (req, res) => {
     res.render('welcomePage.ejs', {
       message: req.session.message
     })
-  })
+  });
 
 
 // -----------------------------------------------------------------------------------------
