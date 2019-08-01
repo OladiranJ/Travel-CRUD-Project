@@ -50,3 +50,20 @@ body {
     font-size: 40px;
     color: black
 }
+
+.created{
+    font-size: 150px;
+    text-align: center;
+}
+
+.link{
+    color: #5085A5;
+}
+
+.link:hover{
+    color:#8FC1E3;
+}
+
+.foot{
+    background-color: #31708E !important;
+}

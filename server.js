@@ -7,6 +7,8 @@ const session           = require('express-session')
 const logger            = require('morgan')
 const app               = express()
 
+require('dotenv').config()
+const PORT              = process.env.PORT
 require('./DB/db')
 
 const usersRoute   = require('./Routes/usersRoute')
@@ -53,6 +55,6 @@ app.get('/', (req, res) => {
 
 // Listener
 
-app.listen(3000, () => {
-    console.log('server is running on port 3000')
+app.listen(PORT, () => {
+    console.log(`server is running on port ${PORT}`)
 })
