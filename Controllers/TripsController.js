@@ -1,6 +1,6 @@
 const express = require('express');
 const Trip = require('../Models/Trips');
-const Activities = require('../models/Activities');
+const Activities = require('../Models/Activities');
 
 
 const tripsController = {
