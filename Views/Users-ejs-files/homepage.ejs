@@ -1,12 +1,14 @@
 <%- include("../partials/header.ejs")%>
 
+                <h3 class="welcome">Welcome, <%=username%>!</h3>
+
+
                 <div class="parallax-container">
                     <div class="parallax"><img src="/images/plane2.jpg" class="header-img"></div>
                 </div>
 
-            <h1>Homepage</h1>
                 
-                <h3>Welcome, <%=username%>!</h3>
+
 
 
 
@@ -14,7 +16,7 @@
 
                 <ul>
                     <%for (let i = 0 ; i < trips.length; i++){%>
-                        <li><a href="/auth/<%=trips[i]._id%>/yourtrips"><%=trips[i].city%></a></li>
+                        <li class="trips-list"><a href="/auth/<%=trips[i]._id%>/yourtrips"><%=trips[i].city%></a></li>
                     <%}%>
                 </ul>
 
