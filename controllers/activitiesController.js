@@ -8,7 +8,7 @@ const activitiesController = {
         try {
             const activitiesIndex = await Activities.find({});
             
-            res.render('Trips-ejs-files/createActivity.ejs', {
+            res.render('trips-ejs-files/createActivity.ejs', {
                 activities: activitiesIndex
             });
         }catch(err){
@@ -28,7 +28,7 @@ const activitiesController = {
         try{
             const cityList = await Activities.find( {city: req.params.city});
             console.log(cityList)
-            res.render('Trips-ejs-files/cityActPage.ejs',{
+            res.render('trips-ejs-files/cityActPage.ejs',{
                 activities: cityList,
                 city: cityList[0].city
             });
@@ -40,7 +40,7 @@ const activitiesController = {
     activityDetails: async (req, res) => {
         try{
             Activities.findById(req.params.id, (err, findActivity) => {
-                res.render('Trips-ejs-files/actDetailPage.ejs', {
+                res.render('trips-ejs-files/actDetailPage.ejs', {
                     activity: findActivity
                 })
             }

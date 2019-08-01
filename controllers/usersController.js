@@ -23,7 +23,7 @@ module.exports = {
             console.log('--------------------')
             console.log("this is the user's homepage")
             console.log('--------------------')
-            res.render('Users-ejs-files/homepage.ejs', {
+            res.render('users-ejs-files/homepage.ejs', {
                 id:         req.session.userId,
                 username:   req.session.username,
                 user:       foundUser,
@@ -47,7 +47,7 @@ module.exports = {
             console.log('--------------------')
             console.log("this is the user's profile page")
             console.log('--------------------')
-            res.render('Users-ejs-files/profilepage.ejs', {
+            res.render('users-ejs-files/profilepage.ejs', {
                 user: foundUser
             })
             
@@ -68,7 +68,7 @@ module.exports = {
             console.log('--------------------')
             console.log("this is the edit profile page")
             console.log('--------------------')
-            res.render('Users-ejs-files/editprofile.ejs', {
+            res.render('users-ejs-files/editprofile.ejs', {
                 user: foundUser
             })            
             
@@ -88,7 +88,7 @@ module.exports = {
             console.log('--------------------')
             console.log("this is the create user page")
             console.log('--------------------')
-            res.render('Users-ejs-files/new.ejs')
+            res.render('users-ejs-files/new.ejs')
             
         } catch (error) {
             
@@ -242,7 +242,7 @@ module.exports = {
             // console.log('--------------------')
             // console.log(allTrips, "<--- this is all the trips")
             // console.log('--------------------')
-            res.render('Users-ejs-files/yourtrips.ejs', {
+            res.render('users-ejs-files/yourtrips.ejs', {
                 id:     req.session.userId,
                 user:   foundUser,
                 trip: selectedTrip,

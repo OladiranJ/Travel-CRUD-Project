@@ -7,14 +7,14 @@ const tripsController = {
    
     newTripPage: async (req, res) => {
         try {
-            res.render('Trips-ejs-files/newTripPage.ejs')
+            res.render('trips-ejs-files/newTripPage.ejs')
         } catch (err){
             res.send(err);
         }
     },
     activityListPage: async (req, res) => {
         try {
-            res.render('Trips-ejs-files/newTripPage.ejs')
+            res.render('trips-ejs-files/newTripPage.ejs')
         } catch (err){
         res.send(err);
         }
@@ -25,7 +25,7 @@ const tripsController = {
     userNewTripPage: async (req,res)=>{
             const allActivities = await Activities.find({city: req.params.city});
             console.log(allActivities);
-            res.render('Trips-ejs-files/userTrip.ejs', {
+            res.render('trips-ejs-files/userTrip.ejs', {
                 activities: allActivities,
                 city: allActivities[0].city
 
