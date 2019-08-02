@@ -256,6 +256,23 @@ module.exports = {
             
         }
 
+    },
+
+    aboutPage: async (req, res) => {
+
+        try {
+            
+            console.log('--------------------')
+            console.log("this is the create user page")
+            console.log('--------------------')
+            res.render('users-ejs-files/about.ejs')
+            
+        } catch (error) {
+            
+            console.log(error)
+            res.send(error)
+            
+        }
     }
 
 }

@@ -26,9 +26,15 @@ h1, h2, h3, h4{
     
 }
 body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
     background-color: #F7F9FB;
     font-family: 'Source Sans Pro', sans-serif;
+}
 
+main {
+    flex: 1 0 auto;
 }
 
 .brand-logo{
@@ -66,4 +72,55 @@ body {
 
 .foot{
     background-color: #31708E !important;
+}
+
+.about{
+    text-align: center;
+}
+
+.stylebtn{
+    border-radius: 8px;
+    border: none;
+    background-color: #8FC1E3;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.stylebtn:hover{
+    opacity: 1;
+}
+
+.styletag{
+    color: white;
+}
+
+.deletebtn{
+    background-color: #E85A4F;
+    margin-left:auto;
+}
+
+.activity-name{
+    font-size: 27px;
+    color: #31708E;
+}
+
+.edit-btns{
+    display: flex !important;
+    justify-content: space-around !important;
+    margin-bottom: 5px;
+}
+
+.more-info{
+    max-width: 50%;
+}
+
+.b2h{
+    margin-right: 250px;
+}
+
+.eyp{
+    margin-left: 250px;
 }

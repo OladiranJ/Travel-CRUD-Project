@@ -1,7 +1,14 @@
 <%- include("../partials/header.ejs")%>
+
+    <div class="parallax-container">
+        <div class="parallax"><img src="/images/transit.jpg" class="header-img"></div>
+    </div>
+
     <div class="container col s2">
+
+
             <h1>Your Profile</h1>
-            <h1>Hi <%=user.username%></h1>
+            <h2>Hi, <%=user.username%>!</h2>
 
             <div>
                 <img src="<%=user.profilePic%>" width="200px">
@@ -12,14 +19,15 @@
                 <h4>About me:</h4>
                     <p><%=user.bio%><p>
 
-            
-            <span>
-                <button><a href="/auth/<%=user._id%>/edit">Edit Your Profile</a></button>
-            </span>
 
             <span>
-                <button><a href="/auth/">Back to Homepage</a></button>
+                <button class="stylebtn b2h"><a class="styletag" href="/auth/">Back to Homepage</a></button>
             </span>
+            
+            <span>
+                <button class="stylebtn eyp"><a class="styletag" href="/auth/<%=user._id%>/edit">Edit Your Profile</a></button>
+            </span>
+
             
     </div>
 <%- include("../partials/footer.ejs")%>

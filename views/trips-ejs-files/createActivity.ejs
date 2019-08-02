@@ -7,7 +7,7 @@
         City: <br><input type="text" name="city" value=""/><br>
         Country: <br><input type="text" name="country" value=""/><br>
         Description: <br><input type="text" name="description" value=""/><br>
-    <input type="submit" value="Add Activity">
+    <input class="stylebtn" type="submit" value="Add Activity">
 <br>
 <br>
     <h3>Available Activities:</h3>
@@ -16,7 +16,7 @@
                 <li>
                     <%= activities[i].activityName %> in <%= activities[i].city %>, <%= activities[i].country %>
                     <form action="/trips/activity-details/<%=activities[i]._id%>?_method=DELETE" method="post">
-                        <input type="submit" value="Delete <%= activities[i].activityName %>" />
+                        <input class="stylebtn" type="submit" value="Delete <%= activities[i].activityName %>" />
                     </form>
                         
 

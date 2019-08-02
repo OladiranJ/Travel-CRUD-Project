@@ -1,5 +1,9 @@
 <%- include("../partials/header.ejs")%>
-<% %>
+
+<div class="parallax-container">
+    <div class="parallax"><img src="/images/mountain.jpg" class="header-img"></div>
+</div>
+
 <div class="container col s2">
 
     <h3>Available Activities in <%=city%>:</h3>
@@ -11,14 +15,16 @@
                     <label class="list-items">
                     <input type="checkbox" name="activity" value='<%= activities[i]._id %>'>
                         <span>
-                        <%= activities[i].activityName %> :
-                        <%= activities[i].description %> 
+                            <span  class="activity-name">
+                                <%= activities[i].activityName %>:
+                            </span>
+                                <p class="description"><%= activities[i].description %></p>
                         </span>  
                     </label>
                 </li>
             <% } %>
         <ul>
-        <input type="submit" value="Create Your Trip">
+        <input class="stylebtn" type="submit" value="Create Your Trip">
     </form>
       
 </div>
