@@ -13,7 +13,7 @@ const userSchema    = new mongoose.Schema ({
     password:       {type: String, required: true},
     email:          {type: String, required: true},
     bio:            {type: String, default: 'N/a'},
-    profilePic:     {type: String, default: '/images/profPicBackground-01 (1).png'}
+    profilePic:     {type: String, default: '/images/profPicBackground-02.png'}
    
 })
 
