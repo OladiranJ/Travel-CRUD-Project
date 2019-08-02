@@ -14,11 +14,7 @@ const userSchema    = new mongoose.Schema ({
     email:          {type: String, required: true},
     bio:            {type: String, default: 'N/a'},
     profilePic:     {type: String, default: '/images/profPicBackground-01 (1).png'}
-    // trips:          [{
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: Trips
-    // }]
-
+   
 })
 
 
