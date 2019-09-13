@@ -87,17 +87,31 @@ module.exports = {
               
         try {
 
-            const password = req.body.password
-            const hashedPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(10))
-            req.body.password = hashedPassword
+            const foundUser = await User.findOne({username: req.body.username})
 
-            const createdUser = await User.create(req.body)
-            
-            req.session.userId = createdUser._id
-            req.session.username = createdUser.username
-            req.session.logged = true
-            req.session.user = createdUser
-            res.redirect('/auth')
+            if (foundUser) {
+
+                // req.session.message = 'Username already exists with another account'
+                // res.redirect('/auth/new')
+                console.log('username exists')
+
+            } else {
+
+                const password = req.body.password
+                const hashedPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(10))
+                req.body.password = hashedPassword
+    
+                const createdUser = await User.create(req.body)
+                
+                req.session.userId = createdUser._id
+                req.session.username = createdUser.username
+                req.session.logged = true
+                req.session.message = ''
+                req.session.user = createdUser
+                res.redirect('/auth')
+
+            }
+
 
         } catch (error) {
 

@@ -23,24 +23,30 @@
 <main>   
 
 
-            <div class="container">
+            <div class="container" style='max-width: 40%' >
 
                 <h3 class="intro-header">Planning dream vacations made easy</h3>
 
                 <h4>Login</h4>
 
+                  <div>
                     <form action="/auth/login" method="POST" class="col s6">
                         <label class="login-form">Username:</label>
                             <input placeholder="Your Name" type="text" name="username">
                         <label class="login-form">Password:</label>
                             <input placeholder="Your Password" type="password" name='password'>
-                            <button class="stylebtn" type='submit'>Login</button>
+                            <div class='btn-div'>
+                              <button class="stylebtn" type='submit'>Login</button>
+                            </div>
                             <span class="error"><%=message%></span>
                     </form>
+                  </div>
 
 
-                <h4>Don't have an account? Sign up here:</h4>
+                <h5 class="intro-header" >Don't have an account? Sign up here:</h5>
+                <div class='btn-div'>
                     <button class="stylebtn" type="button"><a class="styletag" href="/auth/new">Sign up</button>
+                </div>
 
             </div>
 
