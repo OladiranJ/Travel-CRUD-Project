@@ -23,6 +23,9 @@
     <div class="container col s2" style='max-width: 40%'' >
     <h1 style='text-align: center' >Create your Account!</h1>
 
+    <div>
+        <span class="error"><%=message%></span>
+    </div>
         <form action="/auth/register" method="POST">
             <label>Username:</label>
                 <input type="text" name="username"/>

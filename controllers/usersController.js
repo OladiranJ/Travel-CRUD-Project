@@ -73,7 +73,9 @@ module.exports = {
         
         try {
             
-            res.render('users-ejs-files/new.ejs')
+            res.render('users-ejs-files/new.ejs', {
+                message:    req.session.message
+            })
             
         } catch (error) {
             
@@ -91,8 +93,8 @@ module.exports = {
 
             if (foundUser) {
 
-                // req.session.message = 'Username already exists with another account'
-                // res.redirect('/auth/new')
+                req.session.message = 'Username already exists with another account'
+                res.redirect('/auth/new')
                 console.log('username exists')
 
             } else {
